@@ -1,19 +1,15 @@
-import { Inter } from "next/font/google";
+"use client"
 import "./globals.css";
 import Menu from "@/component/Menu";
+import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata = {
-  title: "Ostad Pre-recorded",
-  description: "For practice",
-};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body >
       <Menu/>
+      <ProgressBar />
       {children}
       </body>
     </html>
