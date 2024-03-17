@@ -1,25 +1,18 @@
-# 18 [Routing] Link Component Prefetch and Replace Properties
+# 19 [Routing] Progamatically Routing properties
 
-## href 
-The path or URL to navigate to.
+# useRouter
 
-`<Link href="/dashboard">Dashboard</Link>`
-
-`href` can also accept an object, for example:
-
-`<Link href={{pathname: '/about',query: { name: 'test' }, }}> About </Link>`
-
-## replace
-Defaults to false. When true, next/link will replace the current history state instead of adding a new URL into the browser’s history stack.
-
-`<Link href="/dashboard" replace> Dashboard</Link>`
+The `useRouter` hook allows you to programmatically change routes inside Client Components.
 
 
-## prefetch 
-Default to true. When true, next/link will prefectch the page (denoted by the href) in the backgraound.
+- `router.push(href: string, { scroll: boolean })`: Perform a client-side navigation to the provided route. Adds a new entry into the browser’s history stack.
 
--`true`: The full route will be prefetched for both static and dynamic routes.
+- `router.replace(href: string, { scroll: boolean })`: Perform a client-side navigation to the provided route without adding a new entry into the browser’s history stack.
 
--`false`: Prefetching will never happen both on entering the viewport and on hover.
+- `router.refresh()`: Refresh the current route. Making a new request to the server, re-fetching data requests, and re-rendering Server Components. The client will merge the updated React Server Component payload without losing unaffected client-side React (e.g. useState) or browser state (e.g. scroll position).
 
-`<Link href="/dashboard" prefetch={false}> Dashboard </Link>`
+- `router.prefetch(href: string)`: Prefetch the provided route for faster client-side transitions.
+
+- `router.back()`: Navigate back to the previous route in the browser’s history stack.
+
+- `router.forward()`: Navigate forwards to the next page in the browser’s history stack.
