@@ -6,9 +6,20 @@ const Menu = () => {
     
     return (
         <div>
-           <Link href={"/"}>Home</Link>
-           <Link href={"/product"}>Product</Link>
-           <Link href={"/profile"}>Profile</Link>
+        <ul>
+            <li>
+                <Link href={"/"}>Home</Link>
+                
+            </li>
+            <li>
+                <Link href={"/product"}>Product</Link>
+                
+            </li>
+            <li>
+                <Link href={"/profile"}>Profile</Link>
+            </li>
+        </ul>
+           
         </div>
     );
 };

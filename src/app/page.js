@@ -1,18 +1,11 @@
-
-
 import React from 'react';
 
-const Home = () => {
-
- 
-
-
+const Page = () => {
   return (
     <div>
-      <h1 className='text-2xl'> Home </h1>
-     
+      <h1>Home Page</h1>
     </div>
-  )
-}
+  );
+};
 
-export default Home;
+export default Page;

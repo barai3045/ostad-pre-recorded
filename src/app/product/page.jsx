@@ -9,7 +9,7 @@ const Page = async() => {
 
     return (
         <div>
-          
+            <h1> Product Page </h1>
             <h1 className='text-2xl'>{JSON.stringify(data)}</h1>
            
         </div>
