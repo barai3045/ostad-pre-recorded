@@ -13,3 +13,10 @@ The path or URL to navigate to.
 Defaults to false. When true, next/link will replace the current history state instead of adding a new URL into the browser’s history stack.
 
 `<Link href="/dashboard" replace> Dashboard</Link>`
+
+
+## prefetch 
+-`true`: The full route will be prefetched for both static and dynamic routes.
+-`false`: Prefetching will never happen both on entering the viewport and on hover.
+
+`<Link href="/dashboard" prefetch={false}> Dashboard </Link>`
