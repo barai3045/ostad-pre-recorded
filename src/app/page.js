@@ -7,7 +7,11 @@ const Home = () => {
   const router = useRouter();
 
   const GoTo=() => {
-      router.prefetch()
+      router.push("/product?name=Mobile&price=6000");
+      //router.replace("/profile");
+      //router.refresh();
+      //router.back();
+      //router.forward();
   }
 
   return (
