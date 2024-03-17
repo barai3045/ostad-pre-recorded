@@ -13,7 +13,7 @@ In Next.js client-component **pre-rendered** on the server and **hydrated** on t
 
 | Traditional React applications | Pre-rendering on the server and hydrated on the client |
 | --------------  | ------------ |
-| newline \\ newline2line  <br/> s dfjlkfsd  | new  |
+| - [x] Cleint download all of the JavaScript code and assets - [x] Entire application is rendered on the  client side | new  |
 
 
 
