@@ -11,7 +11,7 @@ To **use client" directive must be defined at the top of a file before imports.
 In Next.js client-component **pre-rendered** on the server and **hydrated** on the client.
 
 
-|Traditional React applications| Pre-rendering on the server and hydrated on the client|
+| Traditional React applications | Pre-rendering on the server and hydrated on the client |
 
 
 
