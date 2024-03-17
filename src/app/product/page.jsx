@@ -1,16 +1,17 @@
-"use client"
-import React from 'react';
-import { useSearchParams } from 'next/navigation';
+async function getData(){
+    const res=await fetch('https://jsonplaceholder.typicode.com/users');
+    const data=await res.json();
+    return data;
+}
 
-const Page = () => {
-    const params=useSearchParams();
+const Page = async() => {
+    const data = await getData();
 
     return (
         <div>
           
-            <h1 className='text-2xl'>Product Page</h1>
-            <h1>{params.get('name')}</h1>
-            <h1>{params.get('price')}</h1>
+            <h1 className='text-2xl'>{JSON.stringify(data)}</h1>
+           
         </div>
     );
 };
