@@ -12,7 +12,7 @@ In Next.js client-component **pre-rendered** on the server and **hydrated** on t
 
 
 | Traditional React applications | Pre-rendering on the server and hydrated on the client |
-| --------------  | ------------ |
+
 
 
 ## Server Component Nexting
