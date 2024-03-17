@@ -8,7 +8,7 @@ const Page = () => {
     return (
         <div>
           
-            <h1 className='text-xl text-blue-500'>Product Page</h1>
+            <h1 className='text-2xl'>Product Page</h1>
             <h1>{params.get('name')}</h1>
             <h1>{params.get('price')}</h1>
         </div>

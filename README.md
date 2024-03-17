@@ -16,6 +16,8 @@ Defaults to false. When true, next/link will replace the current history state i
 
 
 ## prefetch 
+Default to true. When true, next/link will prefectch the page (denoted by the href) in the backgraound.
+
 -`true`: The full route will be prefetched for both static and dynamic routes.
 
 -`false`: Prefetching will never happen both on entering the viewport and on hover.
