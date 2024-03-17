@@ -13,7 +13,7 @@ In Next.js client-component **pre-rendered** on the server and **hydrated** on t
 
 | Traditional React applications | Pre-rendering on the server and hydrated on the client |
 | --------------  | ------------ |
-|  Cleint download all of the JavaScript code and assets <br/> Entire application is rendered on the  client side | Render the React application on the server before it is sent to the client <br/> Client only has to download the inital html and CSS for the application <br/>  Hydration is the process of taking the pre-rendered HTML and attaching event listeners and state to it on the client side.  |
+|  Cleint download all of the JavaScript code and assets  <br/> <br/> Entire application is rendered on the  client side | Render the React application on the server before it is sent to the client <br/> <br/> Client only has to download the inital html and CSS for the application <br/> <br/> Hydration is the process of taking the pre-rendered HTML and attaching event listeners and state to it on the client side.  |
 
 
 
