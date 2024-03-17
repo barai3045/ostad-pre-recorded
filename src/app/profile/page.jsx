@@ -8,8 +8,9 @@ const Page = () => {
     useEffect(() => {
         ( async()=>{
             const res=await  fetch('https://jsonplaceholder.typicode.com/users');
-            const data=await res.json();
-            setData(data);
+            const data1=await res.json();
+            
+            setData(data1);
         })()
     }, [])
 

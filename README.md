@@ -1,7 +1,6 @@
-# 27 Directory File Naming Conventions
+# 28 Directory File Naming Conventions
 
-## loading.js
-- A loading file can create instant **loading states built**
-- By default, this file is a **Server Component**
-- Can also be used **as a Client Component** through the "use client" directive
-- Loading UI components **do not accepts any parameters**.
+## route.js
+- Route Handlers allow you to create custom **request handlers** for a given route using the Web Request and Response
+- HTTP methods are supported : GET, POST, PUT, PATCH, DELETE, HEAD and OPTIONS
+- Use to manage **back-end**
