@@ -10,6 +10,9 @@
 - The componets can be rendered **server-side or client-side**.
 
 
-
+## layout.js
+- A layout is UI that is **shared** between routes.
+- It can be used to render **common components** or functionality accross **multiple pages** in your application
+- For example, you could use a layout to render a **header and footer on every page** in your application
 
 
