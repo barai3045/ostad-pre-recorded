@@ -15,7 +15,8 @@ const Page = () => {
 
     return (
         <div>
-        <h1>Profile Page</h1>
+            <h1 className='text-2xl'>Profile Page</h1>
+            <>{props.name.toString()}</>
             <h1 className='text-2xl'>{JSON.stringify(data)}</h1>
         </div>
     );
