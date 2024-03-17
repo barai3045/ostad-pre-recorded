@@ -11,8 +11,17 @@ const Menu = () => {
                 <Link href={"/"}>Home</Link>
                 
             </li>
+            
             <li>
                 <Link href={"/product"}>Product</Link>
+                
+            </li>
+            <li>
+                <Link href={"/product/men"}>Men Product</Link>
+                
+            </li>
+            <li>
+                <Link href={"/product/women"}>Women Product</Link>
                 
             </li>
             <li>
