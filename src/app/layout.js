@@ -8,7 +8,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body >
-     <Menu/>
+      <Menu/>
       <ProgressBar />
       {children}
       </body>
