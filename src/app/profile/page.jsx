@@ -1,22 +1,18 @@
-"use client"
-import React, { useEffect, useState } from 'react';
+async function getData(){
+    const res = await fetch('https://jsonplaceholder.typicode.com/users');
+    const data = await res.json();
+    return data;
+}
 
-const Page = () => {
 
-    const [data, setData] = useState([]);
-    
-    useEffect(() => {
-        ( async()=>{
-            const res=await  fetch('https://jsonplaceholder.typicode.com/users');
-            const data=await res.json();
-            setData(data);
-        })()
-    }, [])
+const Page = async () => {
+
+    const data = await getData();
 
     return (
         <div>
-            <h1 className='text-2xl'>Profile Page</h1>
-            <h1 className='text-2xl'>{JSON.stringify(data)}</h1>
+            <h1 className="text-2xl text-blue-400">Profile Page</h1>
+            <p>{JSON.stringify(data)}</p>
         </div>
     );
 };
