@@ -1,4 +1,4 @@
-# 27 Directory File Naming Conventions
+# 28 Directory File Naming Conventions
 
 ## loading.js
 - A loading file can create instant **loading states built**
