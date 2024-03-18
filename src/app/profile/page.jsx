@@ -1,5 +1,11 @@
 async function getData(){
-    const res = await fetch('https://jsonplaceholder.typicode.com/users');
+    const res = await fetch('https://jsonplaceholder.typicode.com/users',{
+        //method:'GET',
+        //headers: {'Content-Type':'application/json'},
+        //cache:'no-cache',
+        //cache:'force-cache',
+        next: { revalidate:300 }
+    });
     const data = await res.json();
     return data;
 }
