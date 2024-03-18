@@ -1,7 +1,10 @@
-# 30 [Data Fetching] Data Caching and Revalidating
+# 601 Introduction with prisma
 
-const res1 = await fetch('https://dummyjson.com/products, {cache: 'force-cache'})
+## Prisma Client 
+Auto-generated adn type safe query builder for node.js & TypeScript
 
-const res2 = await fetch('https://dummyjson.com/products, {cache: 'no-store'})
+## Prisma Migrate
+Migration tool to easily evolve your database schema from prototyping to production
 
-const res4 = await fetch('https://dummyjson.com/products, {next:{revalidate:3600}})
+## Prisma Studio
+GUI to view and edit data in your database

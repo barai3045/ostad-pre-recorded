@@ -1,12 +1,9 @@
 async function getData(){
-    const res = await fetch('https://jsonplaceholder.typicode.com/users',{
-        //method:'GET',
-        //headers: {'Content-Type':'application/json'},
-        //cache:'no-cache',
-        //cache:'force-cache',
-        next: { revalidate:300 }
-    });
+    const res = await fetch('https://jsonplaceholder.typicode.com/users');
     const data = await res.json();
+    if(!res.ok){
+        throw new Error('Failed to fetch')
+    }
     return data;
 }
 
