@@ -1,1 +1,2 @@
-# 604 Prisma Number type
+# 604 Prisma Number type 
+ - goto image of public folder
