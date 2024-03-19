@@ -1,14 +1,4 @@
-# 602 Integration Prisma with Next
+# 603 Understanding Prisma Model
 
-## web
- `https://www.prisma.io/`
-
-## installation procedure
-
-
-- `npm init -y`
-- `npm install prisma --save-dev`
-- `npx prisma init --datasource-provider mysql`
-
-
-### prisma  extension for VS code need to isntall 
+- database migraiton
+`npx prisma migrate dev`
