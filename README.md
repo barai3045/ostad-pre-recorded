@@ -19,18 +19,29 @@ datasource db {
 model User {
 
   id Int @id @default(autoincrement()) 
+
   email String @unique
+
   pasword String
+  
   profile Profile?
 
 }
 
 model Profile {
+
   id Int @id @default(autoincrement()) 
+
   firstName String
+
   lastName String
+
   mobile String
+
   city String
+
   userID Int @unique
+
   User User @relation(fields: [userID],references: [id],onDelete: Restrict,onUpdate:Cascade)
+
 }
