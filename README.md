@@ -23,8 +23,10 @@ model User {
   email String @unique
 
   pasword String
-  
+
   profile Profile?
+
+  post Post[]
 
 }
 
@@ -41,6 +43,21 @@ model Profile {
   city String
 
   userID Int @unique
+
+  User User @relation(fields: [userID],references: [id],onDelete: Restrict,onUpdate:Cascade)
+
+}
+
+
+model Post {
+
+  id  Int  @id @default(autoincrement())
+
+  title String
+
+  description String @db.LongText
+
+  userID Int
 
   User User @relation(fields: [userID],references: [id],onDelete: Restrict,onUpdate:Cascade)
 
