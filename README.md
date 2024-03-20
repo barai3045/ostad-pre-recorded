@@ -1,4 +1,4 @@
-# 608 Prisma Boolean Char
+# 610 Prisma One to One relation
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
@@ -18,8 +18,19 @@ datasource db {
 
 model User {
 
-  id Int @id @default(autoincrement()) // Primary key  , Integer length 11  & Auto Increment Equivalent Column
-  col1 Boolean // Boolean Equivalent Column
-  col3 String @db.Char(100) // Char Length 100 Equivalent Column
+  id Int @id @default(autoincrement()) 
+  email String @unique
+  pasword String
+  profile Profile?
 
+}
+
+model Profile {
+  id Int @id @default(autoincrement()) 
+  firstName String
+  lastName String
+  mobile String
+  city String
+  userID Int @unique
+  User User @relation(fields: [userID],references: [id],onDelete: Restrict,onUpdate:Cascade)
 }

@@ -13,16 +13,21 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
-
 model User {
 
-  id Int @id @default(autoincrement()) // Primary key  , Integer length 11  & Auto Increment Equivalent Column
-  col1 Bytes? @db.Blob  // Blob Equivalent Column
-  col2 Bytes? @db.LongBlob // Long Blob Equivalent Column
-  col3 Bytes? @db.TinyBlob // Tiny Blob Equivalent Column
-  col4 Bytes? @db.MediumBlob // Medium Blob Equivalent Column
-  col5 Bytes? @db.Binary(100)  // Binary Equivalent Column
-  col6 Bytes? @db.VarBinary(100) // Var Binary Equivalent Column
+  id Int @id @default(autoincrement()) 
+  email String @unique
+  pasword String
+  profile Profile?
 
+}
+
+model Profile {
+  id Int @id @default(autoincrement()) 
+  firstName String
+  lastName String
+  mobile String
+  city String
+  userID Int @unique
+  User User @relation(fields: [userID],references: [id],onDelete: Restrict,onUpdate:Cascade)
 }
