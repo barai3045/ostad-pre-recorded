@@ -1,2 +1,2 @@
-# 604 Prisma Number type 
+# 605 Prisma String type 
  - goto image of public folder
