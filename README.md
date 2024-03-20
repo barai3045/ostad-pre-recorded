@@ -1,4 +1,4 @@
-# 610 Prisma One to One relation
+# 612 Prisma many to many relation
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
@@ -27,6 +27,8 @@ model User {
   profile Profile?
 
   post Post[]
+
+  comment Comment[]
 
 }
 
@@ -60,5 +62,22 @@ model Post {
   userID Int
 
   User User @relation(fields: [userID],references: [id],onDelete: Restrict,onUpdate:Cascade)
+
+  comment Comment[]
+
+}
+
+model Comment {
+  id    Int    @id @default(autoincrement())
+
+  text String
+
+  userID Int
+
+  User User @relation(fields: [userID],references: [id],onDelete: Restrict,onUpdate:Cascade)
+
+  postID Int
+
+  post Post @relation(fields: [postID],references: [id],onDelete: Restrict,onUpdate:Cascade)
 
 }

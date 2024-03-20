@@ -20,6 +20,7 @@ model User {
   pasword String
   profile Profile?
   post Post[]
+  coment Comment[]
 
 }
 
@@ -41,5 +42,22 @@ model Post {
   description String @db.LongText
   userID Int
   User User @relation(fields: [userID],references: [id],onDelete: Restrict,onUpdate:Cascade)
+  comment Comment[]
 
+}
+
+
+model Comment {
+  
+  id    Int    @id @default(autoincrement())
+
+  text String
+
+  userID Int
+
+  User User @relation(fields: [userID],references: [id],onDelete: Restrict,onUpdate:Cascade)
+
+  postID Int
+
+  post Post @relation(fields: [postID],references: [id],onDelete: Restrict,onUpdate:Cascade)
 }
