@@ -1,0 +1,12 @@
+-- CreateTable
+CREATE TABLE `User` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `col1` BLOB NOT NULL,
+    `col2` LONGBLOB NOT NULL,
+    `col3` TINYBLOB NOT NULL,
+    `col4` MEDIUMBLOB NOT NULL,
+    `col5` BINARY(100) NOT NULL,
+    `col6` VARBINARY(100) NOT NULL,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
