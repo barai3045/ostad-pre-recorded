@@ -8,13 +8,14 @@ export async function POST(req, res){
 
         const {searchParams} = new URL(req.url)
         const id = parseInt(searchParams.get('id'))
-        const reqBody = await req.json();
+        //const reqBody = await req.json();
 
         const prisma = new PrismaClient();
 
-        const result = await prisma.Employee.update({
-            where:{id:id},
-            data:reqBody
+        //const result = await prisma.Employee.update({
+        const result = await prisma.Employee.delete({
+            where:{id:id}
+            //data:reqBody
         })
 
 

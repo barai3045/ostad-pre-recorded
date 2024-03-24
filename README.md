@@ -42,3 +42,18 @@ const {searchParams} = new URL(req.url)
             data:reqBody
         })
 
+
+//delete operation
+
+ const {searchParams} = new URL(req.url)
+
+const id = parseInt(searchParams.get('id'))
+      
+const prisma = new PrismaClient();
+
+const result = await prisma.Employee.delete({
+          
+          where:{id:id}
+            
+  })
+
