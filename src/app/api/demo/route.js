@@ -6,18 +6,16 @@ import { NextResponse } from "next/server";
 export async function POST(req, res){
     try {
 
-        const {searchParams} = new URL(req.url)
-        const id = parseInt(searchParams.get('id'))
-        //const reqBody = await req.json();
-
-        const prisma = new PrismaClient();
-
-        //const result = await prisma.Employee.update({
-        const result = await prisma.Employee.delete({
-            where:{id:id}
-            //data:reqBody
-        })
-
+       const prisma = new PrismaClient();
+       const result = await prisma.User.findMany({
+        select: {id:true, 
+       
+            profile:{select:{firstName:true, lastName:true}},
+            post:true,
+            coment:true}
+        
+        
+       });
 
         
         return NextResponse.json({status:"success", data:result})
