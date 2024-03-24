@@ -17,7 +17,7 @@ model User {
 
   id Int @id @default(autoincrement()) 
   email String @unique
-  pasword String
+  password String
   profile Profile?
   post Post[]
   coment Comment[]
@@ -60,4 +60,13 @@ model Comment {
   postID Int
 
   post Post @relation(fields: [postID],references: [id],onDelete: Restrict,onUpdate:Cascade)
+}
+
+
+model Employee{
+  id Int @id @default(autoincrement())
+  name String
+  designation String
+  city String
+  salary Int
 }
