@@ -13,4 +13,15 @@ datasource db {
 
 //npx prisma migrate dev
 
-// avg . max min etc
+## aggregation avg, max, min, sum, count
+
+`
+const prisma = new PrismaClient();
+       const result = await prisma.employee.aggregate({
+            _count:{id:true},
+            _sum:{salary:true},
+            _avg:{salary:true},
+            _max:{salary:true},
+            _min:{salary:true}
+       });
+`
