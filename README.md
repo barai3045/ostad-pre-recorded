@@ -15,8 +15,7 @@ datasource db {
 
 ## aggregation avg, max, min, sum, count
 
-`
-const prisma = new PrismaClient();
+`const prisma = new PrismaClient();
 const result = await prisma.employee.aggregate({
     _count:{id:true},
     _sum:{salary:true},
@@ -24,7 +23,6 @@ const result = await prisma.employee.aggregate({
     _max:{salary:true},
     _min:{salary:true}
 });
-
 `
 
 ## group by using having 
