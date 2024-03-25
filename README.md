@@ -26,3 +26,14 @@ const result = await prisma.employee.aggregate({
 });
 
 `
+
+## group by using having 
+
+` const prisma = new PrismaClient();
+       const result = await prisma.employee.groupBy({
+            by: ['city'],
+            _count:{id:true},
+            _sum:{salary:true},
+            having:{city:"A"}
+       });
+`
