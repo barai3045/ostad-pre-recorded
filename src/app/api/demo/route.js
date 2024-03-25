@@ -7,11 +7,9 @@ export async function POST(req, res){
     try {
 
        const prisma = new PrismaClient();
-       const result = await prisma.employee.groupBy({
-            by: ['city'],
-            _count:{id:true},
-            _sum:{salary:true},
-            having:{city:"A"}
+       const result = await prisma.employee.findMany({
+           skip:3,
+           take:3
        });
 
         

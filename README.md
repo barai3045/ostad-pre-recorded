@@ -1,4 +1,4 @@
-# 704 Aggregation
+# 705 Pagination
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
@@ -13,25 +13,16 @@ datasource db {
 
 //npx prisma migrate dev
 
-## aggregation avg, max, min, sum, count
-
-`const prisma = new PrismaClient();
-const result = await prisma.employee.aggregate({
-    _count:{id:true},
-    _sum:{salary:true},
-    _avg:{salary:true},
-    _max:{salary:true},
-    _min:{salary:true}
-});
-`
-
-## group by using having 
-
+## pagination cursor-take
 ` const prisma = new PrismaClient();
-       const result = await prisma.employee.groupBy({
-            by: ['city'],
-            _count:{id:true},
-            _sum:{salary:true},
-            having:{city:"A"}
+       const result = await prisma.employee.findMany({
+           cursor:{id:3},
+           take:3
+       });`
+
+## pagination skip-take
+       `const prisma = new PrismaClient();
+       const result = await prisma.employee.findMany({
+           skip:3,
+           take:3
        });
-`
