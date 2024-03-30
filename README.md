@@ -15,3 +15,12 @@ datasource db {
 
 // we can get four types of log in prisma. For enableing  log we need to write 
 // const prisma = new PrismaClient({log: ['query', 'info', 'warn', 'error']});
+
+
+` const prisma = new PrismaClient({log: ['query', 'info', 'warn', 'error']});
+       
+       const starttime = Date.now()
+       
+       const result = await prisma.employee.findMany();
+        const executeTime = Date.now()-starttime + " millisecond"
+        `
