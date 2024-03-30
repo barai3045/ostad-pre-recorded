@@ -1,4 +1,4 @@
-# 705 Pagination
+# 706 Time Calculation and Logging
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
@@ -13,16 +13,5 @@ datasource db {
 
 //npx prisma migrate dev
 
-## pagination cursor-take
-` const prisma = new PrismaClient();
-       const result = await prisma.employee.findMany({
-           cursor:{id:3},
-           take:3
-       });`
-
-## pagination skip-take
-       `const prisma = new PrismaClient();
-       const result = await prisma.employee.findMany({
-           skip:3,
-           take:3
-       });
+// we can get four types of log in prisma. For enableing  log we need to write 
+// const prisma = new PrismaClient({log: ['query', 'info', 'warn', 'error']});

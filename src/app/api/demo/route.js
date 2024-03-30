@@ -6,14 +6,14 @@ import { NextResponse } from "next/server";
 export async function POST(req, res){
     try {
 
-       const prisma = new PrismaClient();
-       const result = await prisma.employee.findMany({
-           skip:3,
-           take:3
-       });
-
+       const prisma = new PrismaClient({log: ['query', 'info', 'warn', 'error']});
+       
+       const starttime = Date.now()
+       
+       const result = await prisma.employee.findMany();
+    const executeTime = Date.now()-starttime + " millisecond"
         
-        return NextResponse.json({status:"success", data:result})
+        return NextResponse.json({exeTime:executeTime ,status:"success", data:result})
     }
     catch (e) {
         return NextResponse.json({status:"fail", data:e})
