@@ -1,4 +1,4 @@
-# 708 Transactions & rollback
+# 709 Comparism Operators
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
@@ -13,17 +13,18 @@ datasource db {
 
 //npx prisma migrate dev
 
-`const prisma = new PrismaClient();
+ // equals , not
+        // in, notIn
+        // lt, lte, gt, gte
+        // contains, startsWith, endsWith
+
+        const prisma = new PrismaClient();
        
-const createUser = prisma.user.create({
-    data: {email:"user1@g.com", password:"12345"}
-})
+        const result = await prisma.employee.findMany({
+            //where: { salary: {equals:2300}}
+            //where: { salary: {in :[2300, 1200]}}
+            //where: { name: {contains:"Employee"}}
+            where: { name: {startsWith:"E"}}
+        });
 
-const deleteComment = prisma.comment.delete({
-    where:{id:2}
-})
-
-const result = await prisma.$transaction([createUser, deleteComment])
-
-return NextResponse.json({status:"success", data:result})`
-`
+        return NextResponse.json({status:"success", data:result})
