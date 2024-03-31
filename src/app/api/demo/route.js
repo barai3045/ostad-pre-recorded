@@ -8,8 +8,16 @@ export async function POST(req, res){
 
         const prisma = new PrismaClient();
        
-        const result = await prisma.$queryRaw`SELECT * FROM employee`
+        const createUser = prisma.user.create({
+            data: {email:"user6@g.com", password:"12345"}
+        })
+
+        const deleteComment = prisma.comment.delete({
+            where:{id:2}
+        })
        
+        const result = await prisma.$transaction([createUser, deleteComment])
+        
         return NextResponse.json({status:"success", data:result})
     }
     catch (e) {

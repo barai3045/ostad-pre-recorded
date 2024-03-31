@@ -1,4 +1,4 @@
-# 707 Executing raw queries
+# 708 Transactions & rollback
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
@@ -15,7 +15,15 @@ datasource db {
 
 `const prisma = new PrismaClient();
        
-const result = await prisma.$queryRaw`SELECT * FROM employee`
-       
+const createUser = prisma.user.create({
+    data: {email:"user1@g.com", password:"12345"}
+})
+
+const deleteComment = prisma.comment.delete({
+    where:{id:2}
+})
+
+const result = await prisma.$transaction([createUser, deleteComment])
+
 return NextResponse.json({status:"success", data:result})`
-        `
+`
