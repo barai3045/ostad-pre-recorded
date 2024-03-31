@@ -1,4 +1,4 @@
-# 706 Time Calculation and Logging
+# 707 Executing raw queries
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
@@ -13,14 +13,9 @@ datasource db {
 
 //npx prisma migrate dev
 
-// we can get four types of log in prisma. For enableing  log we need to write 
-// const prisma = new PrismaClient({log: ['query', 'info', 'warn', 'error']});
-
-
-` const prisma = new PrismaClient({log: ['query', 'info', 'warn', 'error']});
+`const prisma = new PrismaClient();
        
-       const starttime = Date.now()
+const result = await prisma.$queryRaw`SELECT * FROM employee`
        
-       const result = await prisma.employee.findMany();
-        const executeTime = Date.now()-starttime + " millisecond"
+return NextResponse.json({status:"success", data:result})`
         `
