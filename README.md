@@ -1,4 +1,4 @@
-# 709 Comparism Operators
+# 710 Logical operator
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
@@ -13,18 +13,17 @@ datasource db {
 
 //npx prisma migrate dev
 
- // equals , not
-        // in, notIn
-        // lt, lte, gt, gte
-        // contains, startsWith, endsWith
+ // AND
+        // OR
+        // NOT
 
         const prisma = new PrismaClient();
-       
-        const result = await prisma.employee.findMany({
-            //where: { salary: {equals:2300}}
-            //where: { salary: {in :[2300, 1200]}}
-            //where: { name: {contains:"Employee"}}
-            where: { name: {startsWith:"E"}}
-        });
 
-        return NextResponse.json({status:"success", data:result})
+        const result= await prisma.employee.findMany({
+            where: {
+                AND: [
+                    {name:{contains: "Employee 2"}},
+                    {salary:{gt:100}}
+                ]
+            }
+        })

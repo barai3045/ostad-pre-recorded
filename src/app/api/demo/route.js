@@ -5,19 +5,20 @@ import { NextResponse } from "next/server";
 
 export async function POST(req, res){
     try {
-        // equals , not
-        // in, notIn
-        // lt, lte, gt, gte
-        // contains, startsWith, endsWith
+        // AND
+        // OR
+        // NOT
 
         const prisma = new PrismaClient();
-       
-        const result = await prisma.employee.findMany({
-            //where: { salary: {equals:2300}}
-            //where: { salary: {in :[2300, 1200]}}
-            //where: { name: {contains:"Employee"}}
-            where: { name: {startsWith:"E"}}
-        });
+
+        const result= await prisma.employee.findMany({
+            where: {
+                AND: [
+                    {name:{contains: "Employee 2"}},
+                    {salary:{gt:100}}
+                ]
+            }
+        })
 
         return NextResponse.json({status:"success", data:result})
     }
