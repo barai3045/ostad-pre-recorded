@@ -1,4 +1,4 @@
-# 710 Logical operator
+# 711 Working with dates
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
@@ -13,17 +13,16 @@ datasource db {
 
 //npx prisma migrate dev
 
- // AND
-        // OR
-        // NOT
+ // Working with date
+        // lt, lte, gt, gte
+        
 
         const prisma = new PrismaClient();
 
         const result= await prisma.employee.findMany({
             where: {
-                AND: [
-                    {name:{contains: "Employee 2"}},
-                    {salary:{gt:100}}
-                ]
+                birthday: {
+                    lt: new Date('2015-03-15')
+                }
             }
         })
